@@ -1,97 +1,94 @@
-# Furniture Inventory Management System
+# Furniture Inventory Management Platform
 
-A RESTful backend application for managing furniture inventory, built with Spring Boot and MySQL.
+## Overview
 
-## Tech Stack
+The Furniture Inventory Management Platform is a RESTful backend application designed to manage furniture inventory and product information.
+
+The project follows enterprise Java backend architecture using Spring Boot and demonstrates modern backend development practices including layered architecture, DTO pattern, validation, exception handling, and RESTful API design.
+
+Future development will include authentication, inventory transactions, supplier management, warehouse management, Docker deployment, and cloud hosting.
+
+---
+
+## Technology Stack
 
 - Java 17
 - Spring Boot
-- Spring Web MVC
 - Spring Data JPA
 - Hibernate
 - MySQL
 - Maven
 - Postman
+- Git
+- GitHub
 
-## Features
+---
 
-- Create furniture products
-- Retrieve all products
-- Store product data in MySQL
-- RESTful API architecture
+## Current Features
 
-## API Endpoints
+### Product Management
 
-### Get All Products
+- Create Product
+- Get All Products
+- Get Product By ID
+- Update Product
+- Delete Product
 
-```http
-GET /products
-```
+### API Design
 
-Returns all furniture products stored in the database.
+- RESTful API
+- HTTP Status Codes
+- DTO Pattern
+- Layered Architecture
 
-### Create Product
+### Data Validation
 
-```http
-POST /products
-```
+- Bean Validation
+- Request Validation
+- Global Exception Handling
 
-Example request body:
+---
 
-```json
-{
-  "sku": "CHAIR-001",
-  "name": "Oak Dining Chair",
-  "category": "Chair",
-  "price": 249.99,
-  "stockQuantity": 15
-}
-```
-
-Example response:
-
-```json
-{
-  "id": 1,
-  "sku": "CHAIR-001",
-  "name": "Oak Dining Chair",
-  "category": "Chair",
-  "price": 249.99,
-  "stockQuantity": 15
-}
-```
-
-## Architecture
-
-The application follows a layered architecture:
+## Project Structure
 
 ```text
-Client / Postman
-       ↓
-ProductController
-       ↓
-ProductService
-       ↓
-ProductRepository
-       ↓
-Spring Data JPA / Hibernate
-       ↓
-MySQL
+controller/
+service/
+repository/
+model/
+dto/
+mapper/
+exception/
 ```
 
-## Current Progress
+---
 
-- [x] Spring Boot project setup
-- [x] MySQL database connection
-- [x] Product entity
-- [x] Product repository
-- [x] Product service
-- [x] Product controller
-- [x] GET `/products`
-- [x] POST `/products`
-- [x] GET product by ID
-- [x] Update product
-- [x] Delete product
-- [x] Validation
-- [x] Exception handling
-- [ ] Automated tests
+## Roadmap
+
+### Phase 1
+- Product Management
+- Validation
+- Exception Handling
+- DTO Pattern
+
+### Phase 2
+- Swagger/OpenAPI
+- Pagination
+- Search API
+- Sorting
+
+### Phase 3
+- Spring Security
+- JWT Authentication
+- User Management
+
+### Phase 4
+- Supplier Management
+- Warehouse Management
+- Inventory Transactions
+
+### Phase 5
+- Docker
+- GitHub Actions
+- AWS Deployment
+- Unit Testing
