@@ -1,7 +1,9 @@
 package com.allen.furnituremanagement.controller;
 
+import com.allen.furnituremanagement.dto.request.UpdateProductRequest;
+import com.allen.furnituremanagement.dto.request.CreateProductRequest;
+import com.allen.furnituremanagement.dto.response.ProductResponse;
 import jakarta.validation.Valid;
-import com.allen.furnituremanagement.model.Product;
 import com.allen.furnituremanagement.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -19,27 +21,28 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getAllProducts() {
+    public List<ProductResponse> getAllProducts() {
         return productService.getAllProducts();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Product addProduct(@Valid @RequestBody Product product) {
-        return productService.addProduct(product);
+    public ProductResponse addProduct(
+            @Valid @RequestBody CreateProductRequest request) {
+
+        return productService.addProduct(request);
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable Long id) {
+    public ProductResponse getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
     }
-
     @PutMapping("/{id}")
-    public Product updateProduct(
+    public ProductResponse updateProduct(
             @PathVariable Long id,
-            @RequestBody Product product) {
+            @Valid @RequestBody UpdateProductRequest request) {
 
-        return productService.updateProduct(id, product);
+        return productService.updateProduct(id, request);
     }
 
     @DeleteMapping("/{id}")
