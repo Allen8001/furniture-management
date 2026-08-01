@@ -89,9 +89,9 @@ MySQL
 - [x] Product controller
 - [x] GET `/products`
 - [x] POST `/products`
-- [ ] GET product by ID
-- [ ] Update product
-- [ ] Delete product
-- [ ] Validation
-- [ ] Exception handling
+- [x] GET product by ID
+- [x] Update product
+- [x] Delete product
+- [x] Validation
+- [x] Exception handling
 - [ ] Automated tests
