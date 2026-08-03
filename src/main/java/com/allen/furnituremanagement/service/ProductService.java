@@ -53,11 +53,7 @@ public class ProductService {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException(id));
 
-        existingProduct.setSku(request.getSku());
-        existingProduct.setName(request.getName());
-        existingProduct.setCategory(request.getCategory());
-        existingProduct.setPrice(request.getPrice());
-        existingProduct.setStockQuantity(request.getStockQuantity());
+        productMapper.updateEntity(request, existingProduct);
 
         Product savedProduct = productRepository.save(existingProduct);
 
