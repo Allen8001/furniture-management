@@ -4,9 +4,9 @@
 
 The Furniture Inventory Management Platform is a RESTful backend application designed to manage furniture inventory and product information.
 
-The project follows enterprise Java backend architecture using Spring Boot and demonstrates modern backend development practices including layered architecture, DTO pattern, validation, exception handling, and RESTful API design.
+The project follows enterprise Java backend architecture using Spring Boot and demonstrates modern backend development practices including layered architecture, DTO pattern, validation, exception handling, RESTful API design, and compile-time object mapping.
 
-Future development will include authentication, inventory transactions, supplier management, warehouse management, Docker deployment, and cloud hosting.
+Future development will include authentication, inventory transactions, supplier management, warehouse management, Docker deployment, CI/CD, and cloud hosting.
 
 ---
 
@@ -18,6 +18,8 @@ Future development will include authentication, inventory transactions, supplier
 - Hibernate
 - MySQL
 - Maven
+- MapStruct
+- Jakarta Bean Validation
 - Postman
 - Git
 - GitHub
@@ -38,57 +40,100 @@ Future development will include authentication, inventory transactions, supplier
 
 - RESTful API
 - HTTP Status Codes
-- DTO Pattern
 - Layered Architecture
+- DTO Pattern
 
 ### Data Validation
 
 - Bean Validation
-- Request Validation
+- Request Validation using `@Valid`
 - Global Exception Handling
+
+### Object Mapping
+
+- MapStruct
+- Compile-time Object Mapping
+- `@MappingTarget` Update Mapping
+- Java Record Response DTO
 
 ---
 
 ## Project Structure
 
 ```text
-controller/
-service/
-repository/
-model/
-dto/
-mapper/
-exception/
+src
+└── main
+    └── java
+        └── com.allen.furnituremanagement
+            ├── controller
+            ├── dto
+            │   ├── request
+            │   └── response
+            ├── exception
+            ├── mapper
+            ├── model
+            ├── repository
+            └── service
 ```
+
+---
+
+## REST API
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/products` | Get all products |
+| GET | `/products/{id}` | Get product by ID |
+| POST | `/products` | Create a new product |
+| PUT | `/products/{id}` | Update a product |
+| DELETE | `/products/{id}` | Delete a product |
 
 ---
 
 ## Roadmap
 
-### Phase 1
+### Phase 1 ✅ Core Product Management
+
 - Product Management
-- Validation
-- Exception Handling
+- RESTful API
+- Spring Data JPA
+- Bean Validation
+- Global Exception Handling
 - DTO Pattern
+- MapStruct
 
 ### Phase 2
-- Swagger/OpenAPI
+
+- Product Search
 - Pagination
-- Search API
 - Sorting
+- Dynamic Filtering
 
 ### Phase 3
+
+- Swagger / OpenAPI
 - Spring Security
 - JWT Authentication
-- User Management
+- User & Role Management
 
 ### Phase 4
+
 - Supplier Management
 - Warehouse Management
 - Inventory Transactions
 
 ### Phase 5
+
 - Docker
 - GitHub Actions
 - AWS Deployment
 - Unit Testing
+- Integration Testing
+
+---
+
+## Project Goals
+
+The goal of this project is to build a maintainable and scalable backend platform by applying software engineering practices commonly used in enterprise Java development.
+
+The project is continuously enhanced through iterative development with a focus on clean architecture, maintainability, and extensibility.
