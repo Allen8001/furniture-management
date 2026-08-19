@@ -56,6 +56,13 @@ Future development will include authentication, inventory transactions, supplier
 - `@MappingTarget` Update Mapping
 - Java Record Response DTO
 
+### Product Search & Pagination
+
+- Case-insensitive Product Name Search
+- Pagination with Configurable Page Size
+- Dynamic Sorting by Product Fields
+- Ascending and Descending Sort Direction
+- Custom Paginated API Response
 ---
 
 ## Project Structure
@@ -82,12 +89,16 @@ src
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| GET | `/products` | Get all products |
+| GET | `/products` | Get products with search, pagination, and sorting |
 | GET | `/products/{id}` | Get product by ID |
 | POST | `/products` | Create a new product |
 | PUT | `/products/{id}` | Update a product |
 | DELETE | `/products/{id}` | Delete a product |
 
+Example:
+
+```http
+GET /products?keyword=oak&page=0&size=10&sortBy=price&direction=asc
 ---
 
 ## Roadmap
@@ -102,11 +113,12 @@ src
 - DTO Pattern
 - MapStruct
 
-### Phase 2
+### Phase 2 🚧 Product Discovery & Querying
 
-- Product Search
-- Pagination
-- Sorting
+- Product Search ✅
+- Pagination ✅
+- Sorting ✅
+- Custom Paginated Response ✅
 - Dynamic Filtering
 
 ### Phase 3
