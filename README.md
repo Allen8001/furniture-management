@@ -20,6 +20,8 @@ Future development will include authentication, inventory transactions, supplier
 - Maven
 - MapStruct
 - Jakarta Bean Validation
+- OpenAPI 3
+- Swagger UI
 - Postman
 - Git
 - GitHub
@@ -95,12 +97,27 @@ src
 | PUT | `/products/{id}` | Update a product |
 | DELETE | `/products/{id}` | Delete a product |
 
-Example:
+### Query Example
 
 ```http
 GET /products?keyword=oak&page=0&size=10&sortBy=price&direction=asc
----
+```
 
+### API Documentation
+
+Interactive API documentation is available through Swagger UI:
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
+OpenAPI specification:
+
+```text
+http://localhost:8080/v3/api-docs
+```
+
+---
 ## Roadmap
 
 ### Phase 1 ✅ Core Product Management
@@ -113,17 +130,16 @@ GET /products?keyword=oak&page=0&size=10&sortBy=price&direction=asc
 - DTO Pattern
 - MapStruct
 
-### Phase 2 🚧 Product Discovery & Querying
+### Phase 2 ✅ API Enhancement
 
-- Product Search ✅
-- Pagination ✅
-- Sorting ✅
-- Custom Paginated Response ✅
-- Dynamic Filtering
+- Product Search
+- Pagination
+- Sorting
+- OpenAPI Documentation
+- Swagger UI
 
 ### Phase 3
 
-- Swagger / OpenAPI
 - Spring Security
 - JWT Authentication
 - User & Role Management
